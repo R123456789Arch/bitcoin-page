@@ -1,46 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bitcoin Payment</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    .wallet {
-      background: #f4f4f4;
-      padding: 15px;
-      border-radius: 8px;
-      word-break: break-all;
-      font-family: monospace;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitcoin Wallet Demo</title>
+
+<style>
+body{
+    background:#111;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    margin:40px;
+}
+.card{
+    max-width:700px;
+    margin:auto;
+    background:#1d1d1d;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(247,147,26,.3);
+}
+.logo{
+    width:90px;
+}
+.wallet{
+    background:#2a2a2a;
+    padding:15px;
+    border-radius:8px;
+    word-break:break-all;
+    font-family:monospace;
+    margin:20px 0;
+}
+.balance{
+    font-size:2.5em;
+    color:#f7931a;
+    font-weight:bold;
+}
+.note{
+    color:#aaa;
+    font-size:0.9em;
+}
+button{
+    background:#f7931a;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+button:hover{
+    background:#d67f17;
+}
+</style>
+
+<script>
+function copyWallet(){
+    navigator.clipboard.writeText("bc1q7r0uj2h9f48ew0kych5knsl343f8z4nqxkye23");
+    alert("Wallet copied!");
+}
+</script>
+
 </head>
 <body>
 
-<h1>Bitcoin Payment</h1>
+<div class="card">
+
+<img class="logo"
+src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg"
+alt="Bitcoin">
+
+<h1>Bitcoin Wallet</h1>
 
 <p>
-Bitcoin is a decentralized digital currency that allows people to send payments
-directly to one another without relying on a bank or other intermediary.
-Transactions are recorded on a public blockchain.
+Bitcoin is a decentralized digital currency that enables secure peer-to-peer
+payments without a bank or central authority.
 </p>
-
-<h2>Wallet Address</h2>
 
 <div class="wallet">
-bc1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+bc1q7r0uj2h9f48ew0kych5knsl343f8z4nqxkye23
 </div>
 
-<p>
-Scan the QR code (if provided) or copy the address above to send Bitcoin.
-Always verify the address before sending funds.
+<button onclick="copyWallet()">Copy Wallet Address</button>
+
+<h2>Wallet Balance</h2>
+
+<div class="balance">16.99 BTC</div>
+
+<p class="note">
+Demo balance shown for design purposes only.
 </p>
+
+</div>
 
 </body>
 </html>
